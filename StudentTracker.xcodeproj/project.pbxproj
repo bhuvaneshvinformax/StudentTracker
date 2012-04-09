@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C243918153264EA00F5B20D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C243917153264EA00F5B20D /* UIKit.framework */; };
+		9C24391A153264EA00F5B20D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C243919153264EA00F5B20D /* Foundation.framework */; };
+		9C24391C153264EA00F5B20D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C24391B153264EA00F5B20D /* CoreGraphics.framework */; };
+		9C24391E153264EA00F5B20D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C24391D153264EA00F5B20D /* CoreData.framework */; };
+		9C243924153264EA00F5B20D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C243922153264EA00F5B20D /* InfoPlist.strings */; };
+		9C243926153264EA00F5B20D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C243925153264EA00F5B20D /* main.m */; };
+		9C24392A153264EA00F5B20D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C243929153264EA00F5B20D /* AppDelegate.m */; };
+		9C24392D153264EA00F5B20D /* StudentTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C24392B153264EA00F5B20D /* StudentTracker.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9C243913153264EA00F5B20D /* StudentTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C243917153264EA00F5B20D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9C243919153264EA00F5B20D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9C24391B153264EA00F5B20D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9C24391D153264EA00F5B20D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9C243921153264EA00F5B20D /* StudentTracker-Info.plist */ = {isa = PBXFileReference; path = "StudentTracker-Info.plist"; sourceTree = "<group>"; };
+		9C243923153264EA00F5B20D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9C243925153264EA00F5B20D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C243927153264EA00F5B20D /* StudentTracker-Prefix.pch */ = {isa = PBXFileReference; path = "StudentTracker-Prefix.pch"; sourceTree = "<group>"; };
+		9C243928153264EA00F5B20D /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		9C243929153264EA00F5B20D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9C24392C153264EA00F5B20D /* StudentTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentTracker.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C243910153264EA00F5B20D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C243918153264EA00F5B20D /* UIKit.framework in Frameworks */,
+				9C24391A153264EA00F5B20D /* Foundation.framework in Frameworks */,
+				9C24391C153264EA00F5B20D /* CoreGraphics.framework in Frameworks */,
+				9C24391E153264EA00F5B20D /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C243908153264EA00F5B20D = {
+			isa = PBXGroup;
+			children = (
+				9C24391F153264EA00F5B20D /* StudentTracker */,
+				9C243916153264EA00F5B20D /* Frameworks */,
+				9C243914153264EA00F5B20D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C243914153264EA00F5B20D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C243913153264EA00F5B20D /* StudentTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C243916153264EA00F5B20D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C243917153264EA00F5B20D /* UIKit.framework */,
+				9C243919153264EA00F5B20D /* Foundation.framework */,
+				9C24391B153264EA00F5B20D /* CoreGraphics.framework */,
+				9C24391D153264EA00F5B20D /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C24391F153264EA00F5B20D /* StudentTracker */ = {
+			isa = PBXGroup;
+			children = (
+				9C243928153264EA00F5B20D /* AppDelegate.h */,
+				9C243929153264EA00F5B20D /* AppDelegate.m */,
+				9C24392B153264EA00F5B20D /* StudentTracker.xcdatamodeld */,
+				9C243920153264EA00F5B20D /* Supporting Files */,
+			);
+			path = StudentTracker;
+			sourceTree = "<group>";
+		};
+		9C243920153264EA00F5B20D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C243921153264EA00F5B20D /* StudentTracker-Info.plist */,
+				9C243922153264EA00F5B20D /* InfoPlist.strings */,
+				9C243925153264EA00F5B20D /* main.m */,
+				9C243927153264EA00F5B20D /* StudentTracker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C243912153264EA00F5B20D /* StudentTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C243930153264EA00F5B20D /* Build configuration list for PBXNativeTarget "StudentTracker" */;
+			buildPhases = (
+				9C24390F153264EA00F5B20D /* Sources */,
+				9C243910153264EA00F5B20D /* Frameworks */,
+				9C243911153264EA00F5B20D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StudentTracker;
+			productName = StudentTracker;
+			productReference = 9C243913153264EA00F5B20D /* StudentTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C24390A153264EA00F5B20D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Aron's IT Consultancy";
+			};
+			buildConfigurationList = 9C24390D153264EA00F5B20D /* Build configuration list for PBXProject "StudentTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9C243908153264EA00F5B20D;
+			productRefGroup = 9C243914153264EA00F5B20D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C243912153264EA00F5B20D /* StudentTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C243911153264EA00F5B20D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C243924153264EA00F5B20D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C24390F153264EA00F5B20D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C243926153264EA00F5B20D /* main.m in Sources */,
+				9C24392A153264EA00F5B20D /* AppDelegate.m in Sources */,
+				9C24392D153264EA00F5B20D /* StudentTracker.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9C243922153264EA00F5B20D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C243923153264EA00F5B20D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C24392E153264EA00F5B20D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9C24392F153264EA00F5B20D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C243931153264EA00F5B20D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StudentTracker/StudentTracker-Prefix.pch";
+				INFOPLIST_FILE = "StudentTracker/StudentTracker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9C243932153264EA00F5B20D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StudentTracker/StudentTracker-Prefix.pch";
+				INFOPLIST_FILE = "StudentTracker/StudentTracker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C24390D153264EA00F5B20D /* Build configuration list for PBXProject "StudentTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C24392E153264EA00F5B20D /* Debug */,
+				9C24392F153264EA00F5B20D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C243930153264EA00F5B20D /* Build configuration list for PBXNativeTarget "StudentTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C243931153264EA00F5B20D /* Debug */,
+				9C243932153264EA00F5B20D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C24392B153264EA00F5B20D /* StudentTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C24392C153264EA00F5B20D /* StudentTracker.xcdatamodel */,
+			);
+			currentVersion = 9C24392C153264EA00F5B20D /* StudentTracker.xcdatamodel */;
+			path = StudentTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9C24390A153264EA00F5B20D /* Project object */;
+}
