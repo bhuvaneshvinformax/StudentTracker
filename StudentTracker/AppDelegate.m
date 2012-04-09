@@ -7,10 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "STStudentListViewController.h"
+#import "STSubjectListViewController.h"
+#import "STStudent.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize tabBarController = _tabBarController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
@@ -21,14 +25,25 @@
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
+    [_tabBarController release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
+    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
+    
+    STStudentListViewController *studentListViewController = [[[STStudentListViewController alloc] initWithContext:self.managedObjectContext]autorelease];
+    STSubjectListViewController *subjectListViewController = [[[STSubjectListViewController alloc] initWithContext:self.managedObjectContext] autorelease];
+    
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:[[[UINavigationController alloc] initWithRootViewController:studentListViewController] autorelease], 
+                                             [[[UINavigationController alloc] initWithRootViewController:subjectListViewController] autorelease],nil];
+    
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
