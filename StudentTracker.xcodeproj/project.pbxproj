@@ -22,6 +22,8 @@
 		9C2439611532695E00F5B20D /* STSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2439601532695E00F5B20D /* STSubject.m */; };
 		9C24397E153273DB00F5B20D /* STAddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C24397D153273DB00F5B20D /* STAddStudentViewController.m */; };
 		9C2439811532790600F5B20D /* STAddStudentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C24397F1532790600F5B20D /* STAddStudentView.m */; };
+		9C3AF10815358FC100EF3A9B /* SubjectList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C3AF10715358FC100EF3A9B /* SubjectList.plist */; };
+		9C3AF10A15358FDD00EF3A9B /* StudentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C3AF10915358FDD00EF3A9B /* StudentList.plist */; };
 		9C695CCE1532B18200809B8A /* STStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C695CCD1532B18200809B8A /* STStudent.m */; };
 		9CA1473B1532979A006C716F /* STAddSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1473A1532979A006C716F /* STAddSubjectViewController.m */; };
 		9CA1473E153297AF006C716F /* STAddSubjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1473D153297AF006C716F /* STAddSubjectView.m */; };
@@ -54,6 +56,8 @@
 		9C24397D153273DB00F5B20D /* STAddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STAddStudentViewController.m; path = "Classes/Student Listing/View Controllers/STAddStudentViewController.m"; sourceTree = "<group>"; };
 		9C24397F1532790600F5B20D /* STAddStudentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STAddStudentView.m; path = "Classes/Student Listing/Views/STAddStudentView.m"; sourceTree = "<group>"; };
 		9C2439801532790600F5B20D /* STAddStudentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAddStudentView.h; path = "Classes/Student Listing/Views/STAddStudentView.h"; sourceTree = "<group>"; };
+		9C3AF10715358FC100EF3A9B /* SubjectList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SubjectList.plist; sourceTree = "<group>"; };
+		9C3AF10915358FDD00EF3A9B /* StudentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StudentList.plist; sourceTree = "<group>"; };
 		9C695CCC1532B18200809B8A /* STStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STStudent.h; path = "Classes/Core Data Entities/STStudent.h"; sourceTree = "<group>"; };
 		9C695CCD1532B18200809B8A /* STStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STStudent.m; path = "Classes/Core Data Entities/STStudent.m"; sourceTree = "<group>"; };
 		9CA147391532979A006C716F /* STAddSubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAddSubjectViewController.h; path = "Classes/Subject Listing/View Controllers/STAddSubjectViewController.h"; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				9C243922153264EA00F5B20D /* InfoPlist.strings */,
 				9C243925153264EA00F5B20D /* main.m */,
 				9C243927153264EA00F5B20D /* StudentTracker-Prefix.pch */,
+				9C3AF10715358FC100EF3A9B /* SubjectList.plist */,
+				9C3AF10915358FDD00EF3A9B /* StudentList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -263,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C243924153264EA00F5B20D /* InfoPlist.strings in Resources */,
+				9C3AF10815358FC100EF3A9B /* SubjectList.plist in Resources */,
+				9C3AF10A15358FDD00EF3A9B /* StudentList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

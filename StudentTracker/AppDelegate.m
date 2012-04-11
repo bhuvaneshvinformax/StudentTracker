@@ -10,6 +10,7 @@
 #import "STStudentListViewController.h"
 #import "STSubjectListViewController.h"
 #import "STStudent.h"
+#import "STSubject.h"
 
 @implementation AppDelegate
 
@@ -35,6 +36,58 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
+    
+    //Preload plist values into coreData (if they dont already exist)
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    NSError *error;
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"STSubject"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSUInteger count = [self.managedObjectContext countForFetchRequest:fetchRequest error:&error];
+    
+    if (count == 0) 
+    {
+        //Subjects
+        NSBundle* bundle = [NSBundle mainBundle];
+        NSString* plistPath = [bundle pathForResource:@"SubjectList" ofType:@"plist"];
+        NSDictionary *subjectDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+        
+        for (NSString *key in [subjectDictionary allKeys])
+        {   
+            NSDictionary *subjectDict = [subjectDictionary objectForKey:key];
+            
+            STSubject *subjectToAdd = [NSEntityDescription insertNewObjectForEntityForName:@"STSubject" inManagedObjectContext:self.managedObjectContext];
+            [subjectToAdd setSubjectID:[NSNumber numberWithInt:[[subjectDict objectForKey:@"subjectID"] intValue]]];
+            [subjectToAdd setSubjectName:[subjectDict objectForKey:@"subjectName"]];
+        }
+        
+        //Students
+        plistPath = [bundle pathForResource:@"StudentList" ofType:@"plist"];
+        NSDictionary *studentDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+        
+        for (NSString *key in [studentDictionary allKeys])
+        {   
+            NSDictionary *studentDict = [studentDictionary objectForKey:key];
+            
+            STStudent *studentToAdd = [NSEntityDescription insertNewObjectForEntityForName:@"STStudent" inManagedObjectContext:self.managedObjectContext];
+            [studentToAdd setStudentID:[studentDict objectForKey:@"studentID"]];
+            [studentToAdd setStudentName:[studentDict objectForKey:@"studentName"]];
+            [studentToAdd setDayEnrolled:[NSNumber numberWithInt:[[studentDict objectForKey:@"dayEnrolled"]intValue]]];
+            [studentToAdd setSubjectID:[NSNumber numberWithInt:[[studentDict objectForKey:@"subjectID"]intValue]]];            
+        }
+        
+        if (![self.managedObjectContext save:&error])
+        {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+    }
+    
+    [fetchRequest release];
+    
     
     STStudentListViewController *studentListViewController = [[[STStudentListViewController alloc] initWithContext:self.managedObjectContext]autorelease];
     STSubjectListViewController *subjectListViewController = [[[STSubjectListViewController alloc] initWithContext:self.managedObjectContext] autorelease];

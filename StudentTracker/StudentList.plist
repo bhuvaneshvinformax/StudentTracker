@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>s0</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>1</string>
+		<key>subjectID</key>
+		<string>0</string>
+		<key>studentName</key>
+		<string>Aron Bury</string>
+		<key>studentID</key>
+		<string>s0</string>
+	</dict>
+	<key>s1</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>1</string>
+		<key>subjectID</key>
+		<string>1</string>
+		<key>studentName</key>
+		<string>Jonas Blogs</string>
+		<key>studentID</key>
+		<string>s1</string>
+	</dict>
+	<key>s2</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>1</string>
+		<key>subjectID</key>
+		<string>3</string>
+		<key>studentName</key>
+		<string>Frank Common</string>
+		<key>studentID</key>
+		<string>s2</string>
+	</dict>
+	<key>s3</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>1</string>
+		<key>subjectID</key>
+		<string>2</string>
+		<key>studentName</key>
+		<string>Bob Smith</string>
+		<key>studentID</key>
+		<string>s3</string>
+	</dict>
+	<key>s4</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>2</string>
+		<key>subjectID</key>
+		<string>4</string>
+		<key>studentName</key>
+		<string>Bob Smith</string>
+		<key>studentID</key>
+		<string>s4</string>
+	</dict>
+	<key>s5</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>2</string>
+		<key>subjectID</key>
+		<string>3</string>
+		<key>studentName</key>
+		<string>Owen Patterson</string>
+		<key>studentID</key>
+		<string>s5</string>
+	</dict>
+	<key>s6</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>2</string>
+		<key>subjectID</key>
+		<string>1</string>
+		<key>studentName</key>
+		<string>Patterson Gob</string>
+		<key>studentID</key>
+		<string>s6</string>
+	</dict>
+	<key>s7</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>2</string>
+		<key>subjectID</key>
+		<string>0</string>
+		<key>studentName</key>
+		<string>Peter Donnovan</string>
+		<key>studentID</key>
+		<string>s7</string>
+	</dict>
+	<key>s8</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>3</string>
+		<key>subjectID</key>
+		<string>1</string>
+		<key>studentName</key>
+		<string>Braden Diehm</string>
+		<key>studentID</key>
+		<string>s8</string>
+	</dict>
+	<key>s9</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>3</string>
+		<key>subjectID</key>
+		<string>4</string>
+		<key>studentName</key>
+		<string>Oliver Lau</string>
+		<key>studentID</key>
+		<string>s9</string>
+	</dict>
+	<key>s10</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>3</string>
+		<key>subjectID</key>
+		<string>2</string>
+		<key>studentName</key>
+		<string>Stefan Perry</string>
+		<key>studentID</key>
+		<string>s10</string>
+	</dict>
+	<key>s11</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>3</string>
+		<key>subjectID</key>
+		<string>4</string>
+		<key>studentName</key>
+		<string>Jack White</string>
+		<key>studentID</key>
+		<string>s11</string>
+	</dict>
+	<key>s12</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>4</string>
+		<key>subjectID</key>
+		<string>0</string>
+		<key>studentName</key>
+		<string>Cade Thierry</string>
+		<key>studentID</key>
+		<string>s12</string>
+	</dict>
+	<key>s13</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>4</string>
+		<key>subjectID</key>
+		<string>1</string>
+		<key>studentName</key>
+		<string>Keith Te</string>
+		<key>studentID</key>
+		<string>s13</string>
+	</dict>
+	<key>s14</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>4</string>
+		<key>subjectID</key>
+		<string>1</string>
+		<key>studentName</key>
+		<string>Dean Jones</string>
+		<key>studentID</key>
+		<string>s14</string>
+	</dict>
+	<key>s15</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>5</string>
+		<key>subjectID</key>
+		<string>2</string>
+		<key>studentName</key>
+		<string>Matthew Moore</string>
+		<key>studentID</key>
+		<string>s15</string>
+	</dict>
+	<key>s16</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>5</string>
+		<key>subjectID</key>
+		<string>3</string>
+		<key>studentName</key>
+		<string>Peter Fullerton</string>
+		<key>studentID</key>
+		<string>s16</string>
+	</dict>
+	<key>s17</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>5</string>
+		<key>subjectID</key>
+		<string>4</string>
+		<key>studentName</key>
+		<string>Tristian Smith</string>
+		<key>studentID</key>
+		<string>s17</string>
+	</dict>
+	<key>s18</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>5</string>
+		<key>subjectID</key>
+		<string>1</string>
+		<key>studentName</key>
+		<string>Steph Jones</string>
+		<key>studentID</key>
+		<string>s18</string>
+	</dict>
+	<key>s19</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>6</string>
+		<key>subjectID</key>
+		<string>3</string>
+		<key>studentName</key>
+		<string>Ben Filldi</string>
+		<key>studentID</key>
+		<string>s19</string>
+	</dict>
+	<key>s20</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>6</string>
+		<key>subjectID</key>
+		<string>3</string>
+		<key>studentName</key>
+		<string>Goldie Stackhouse</string>
+		<key>studentID</key>
+		<string>s20</string>
+	</dict>
+	<key>s21</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>6</string>
+		<key>subjectID</key>
+		<string>0</string>
+		<key>studentName</key>
+		<string>Chris McLean</string>
+		<key>studentID</key>
+		<string>s21</string>
+	</dict>
+	<key>s22</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>7</string>
+		<key>subjectID</key>
+		<string>1</string>
+		<key>studentName</key>
+		<string>Justin Brown</string>
+		<key>studentID</key>
+		<string>s22</string>
+	</dict>
+	<key>s23</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>7</string>
+		<key>subjectID</key>
+		<string>1</string>
+		<key>studentName</key>
+		<string>Brooke Carey</string>
+		<key>studentID</key>
+		<string>s23</string>
+	</dict>
+	<key>s24</key>
+	<dict>
+		<key>dayEnrolled</key>
+		<string>7</string>
+		<key>subjectID</key>
+		<string>2</string>
+		<key>studentName</key>
+		<string>Megan Stone</string>
+		<key>studentID</key>
+		<string>s24</string>
+	</dict>
+</dict>
+</plist>

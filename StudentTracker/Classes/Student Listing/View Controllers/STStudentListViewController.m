@@ -51,19 +51,14 @@
     studentView.studentListTableView.dataSource = self;
     
     NSError *error;
+    NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"studentID" ascending:YES];
+    
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sorter, nil];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"STStudent" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
+    [fetchRequest setSortDescriptors:sortDescriptors];
     self.studentArray = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    for (STStudent *info in studentArray) 
-    {
-        NSLog(@"Name: %@", info.studentName);
-        NSLog(@"ID: %@", info.studentID);
-        NSLog(@"Days: %@", info.dayEnrolled);
-        NSLog(@"subjectID: %@", info.subjectID);
-        NSLog(@" ");
-    }
     
     [fetchRequest release];
     
@@ -116,8 +111,8 @@
     }
     
     STStudent *student = [studentArray objectAtIndex:indexPath.row];
-    [[cell textLabel] setText:student.studentID];
-    [[cell detailTextLabel] setText:student.studentName];
+    [[cell textLabel] setText:student.studentName];
+    [[cell detailTextLabel] setText:student.studentID];
     
     return cell;
 }
