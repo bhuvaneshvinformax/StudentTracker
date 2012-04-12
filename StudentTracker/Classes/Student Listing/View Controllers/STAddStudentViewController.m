@@ -109,8 +109,10 @@
     
     NSError *error;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"subjectID" ascending:YES];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"STSubject" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sorter]];
     self.subjectsArray = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
     self.daysArray = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", nil];
     
@@ -120,6 +122,7 @@
     
     [navigationItem release];
     [fetchRequest release];
+    [sorter release];
 }
 
 #pragma mark - UIPickerDelegate Methods

@@ -68,13 +68,16 @@
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"STSubject"
                                               inManagedObjectContext:context];
+    NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"subjectID" ascending:YES];
     [fetchRequest setEntity:entity];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sorter]];
     
     self.subjectArray = [context executeFetchRequest:fetchRequest error:&error];
     
     STSubjectListView *subjectView = (STSubjectListView *)self.view;
     [[subjectView subjectTableView] reloadData];
     [fetchRequest release];
+    [sorter release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

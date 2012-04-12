@@ -62,7 +62,6 @@
     
     [fetchRequest release];
     [sorter release];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -74,9 +73,11 @@
     
     NSError *error;
     
+    NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"studentID" ascending:YES];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"STStudent"
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sorter]];
     
     self.studentArray = [context executeFetchRequest:fetchRequest error:&error];
     
@@ -84,6 +85,7 @@
     
     [[studentView studentListTableView] reloadData];
     [fetchRequest release];
+    [sorter release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
