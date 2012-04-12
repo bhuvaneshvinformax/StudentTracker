@@ -56,7 +56,7 @@
 {
     [super loadView];
     
-    self.view = [[STAddStudentView alloc] initWithFrame:self.view.frame];
+    self.view = [[[STAddStudentView alloc] initWithFrame:self.view.frame] autorelease];
 }
 
 - (void)viewDidLoad
@@ -119,6 +119,7 @@
     [[addStudentView dayEnrolledTextField] setDelegate:self];
     
     [navigationItem release];
+    [fetchRequest release];
 }
 
 #pragma mark - UIPickerDelegate Methods

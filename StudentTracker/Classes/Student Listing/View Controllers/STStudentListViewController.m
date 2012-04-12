@@ -61,6 +61,7 @@
     self.studentArray = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
     [fetchRequest release];
+    [sorter release];
     
 }
 
@@ -82,6 +83,7 @@
     STStudentListView *studentView = (STStudentListView *)self.view;
     
     [[studentView studentListTableView] reloadData];
+    [fetchRequest release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

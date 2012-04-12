@@ -39,7 +39,7 @@
 {
     [super loadView];
     
-    self.view = [[STAddSubjectView alloc] initWithFrame:self.view.frame];
+    self.view = [[[STAddSubjectView alloc] initWithFrame:self.view.frame] autorelease];
 }
 
 - (void)viewDidLoad
@@ -63,6 +63,8 @@
     [navItem setTitle:self.title];
     
     [[addSubjectView nameTextField] setDelegate:self];
+    
+    [navigationItem release];
 }
 
 - (void)addSubject:(id)sender

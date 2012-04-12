@@ -74,6 +74,7 @@
     
     STSubjectListView *subjectView = (STSubjectListView *)self.view;
     [[subjectView subjectTableView] reloadData];
+    [fetchRequest release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
