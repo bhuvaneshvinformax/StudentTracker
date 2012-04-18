@@ -11,6 +11,7 @@
 #import "STSubjectListViewController.h"
 #import "STStudent.h"
 #import "STSubject.h"
+#import "CorePlot-CocoaTouch.h"
 
 @implementation AppDelegate
 
