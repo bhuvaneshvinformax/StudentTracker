@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "STAddStudentViewController.h"
 
-@interface STStudentListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddStudentViewControllerDelegate>
+@interface STStudentListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddStudentViewControllerDelegate, UIActionSheetDelegate>
 
 - (id)initWithContext:(NSManagedObjectContext *)context;
 

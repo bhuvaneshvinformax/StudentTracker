@@ -7,6 +7,7 @@
 //
 
 #import "STStudentListViewController.h"
+#import "STLineGraphViewController.h"
 #import "STStudentListView.h"
 #import "STStudent.h"
 
@@ -14,6 +15,7 @@
 @property (nonatomic, strong) NSArray *studentArray;
 
 - (void)addStudent:(id)sender;
+- (void)graphButtonWasSelected:(id)sender;
 @end
 
 @implementation STStudentListViewController
@@ -46,6 +48,8 @@
     STStudentListView *studentView = (STStudentListView *)self.view;
     
     [[self navigationItem] setRightBarButtonItem:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addStudent:)] autorelease] animated:NO];
+    
+    [[self navigationItem] setLeftBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Graphs" style:UIBarButtonItemStylePlain target:self action:@selector(graphButtonWasSelected:)] autorelease] animated:NO];
     
     studentView.studentListTableView.delegate = self;
     studentView.studentListTableView.dataSource = self;
@@ -121,6 +125,19 @@
     return cell;
 }
 
+#pragma mark - UIActionSheet Delegate Methods
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) 
+    {
+        STLineGraphViewController *lineGraphVC = [[STLineGraphViewController alloc] init];
+        [lineGraphVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        
+        [self presentModalViewController:lineGraphVC animated:YES];
+        [lineGraphVC release];
+    }
+}
+
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -144,6 +161,17 @@
     [self presentModalViewController:addStudentVC animated:YES];
     
     [addStudentVC release];
+}
+
+- (void)graphButtonWasSelected:(id)sender
+{
+    UIActionSheet *graphSelectionActionSheet = [[[UIActionSheet alloc] initWithTitle:@"Choose a graph" 
+                                                                           delegate:self 
+                                                                  cancelButtonTitle:@"Cancel" 
+                                                             destructiveButtonTitle:nil 
+                                                                  otherButtonTitles:@"Enrollement over time", nil] autorelease];
+    
+    [graphSelectionActionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
 }
 
 - (void)dealloc
