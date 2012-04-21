@@ -30,6 +30,7 @@
 		9CA1473B1532979A006C716F /* STAddSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1473A1532979A006C716F /* STAddSubjectViewController.m */; };
 		9CA1473E153297AF006C716F /* STAddSubjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1473D153297AF006C716F /* STAddSubjectView.m */; };
 		9CA46EF5153EE1460046479A /* STLineGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA46EF4153EE1460046479A /* STLineGraphViewController.m */; };
+		9CA8E771154269D700A0E6B8 /* STLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA8E770154269D700A0E6B8 /* STLineGraphView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		9CA1473D153297AF006C716F /* STAddSubjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STAddSubjectView.m; path = "Classes/Subject Listing/Views/STAddSubjectView.m"; sourceTree = "<group>"; };
 		9CA46EF3153EE1460046479A /* STLineGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STLineGraphViewController.h; path = "Classes/Graphing/View Controllers/STLineGraphViewController.h"; sourceTree = "<group>"; };
 		9CA46EF4153EE1460046479A /* STLineGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STLineGraphViewController.m; path = "Classes/Graphing/View Controllers/STLineGraphViewController.m"; sourceTree = "<group>"; };
+		9CA8E76F154269D700A0E6B8 /* STLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STLineGraphView.h; path = Classes/Graphing/Views/STLineGraphView.h; sourceTree = "<group>"; };
+		9CA8E770154269D700A0E6B8 /* STLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STLineGraphView.m; path = Classes/Graphing/Views/STLineGraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +277,8 @@
 		9CA46EF1153EDFB10046479A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9CA8E76F154269D700A0E6B8 /* STLineGraphView.h */,
+				9CA8E770154269D700A0E6B8 /* STLineGraphView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				9CA1473E153297AF006C716F /* STAddSubjectView.m in Sources */,
 				9C695CCE1532B18200809B8A /* STStudent.m in Sources */,
 				9CA46EF5153EE1460046479A /* STLineGraphViewController.m in Sources */,
+				9CA8E771154269D700A0E6B8 /* STLineGraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

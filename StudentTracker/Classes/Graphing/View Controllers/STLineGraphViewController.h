@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CorePlot-CocoaTouch.h"
 
-@interface STLineGraphViewController : UIViewController
+@protocol STLineGraphViewControllerDelegate
+@required
+- (void)doneButtonWasTapped:(id)sender;
 
 @end
+
+@interface STLineGraphViewController : UIViewController <CPTScatterPlotDataSource, CPTScatterPlotDelegate>
+
+@property (nonatomic, strong) CPTGraph *graph;
+@property (nonatomic, assign) id<STLineGraphViewControllerDelegate> delegate;
+
+@end
+

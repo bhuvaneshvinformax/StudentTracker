@@ -7,7 +7,7 @@
 //
 
 #import "STStudentListViewController.h"
-#import "STLineGraphViewController.h"
+
 #import "STStudentListView.h"
 #import "STStudent.h"
 
@@ -131,6 +131,7 @@
     if (buttonIndex == 0) 
     {
         STLineGraphViewController *lineGraphVC = [[STLineGraphViewController alloc] init];
+        [lineGraphVC setDelegate:self];
         [lineGraphVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
         
         [self presentModalViewController:lineGraphVC animated:YES];
@@ -172,6 +173,12 @@
                                                                   otherButtonTitles:@"Enrollement over time", nil] autorelease];
     
     [graphSelectionActionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+}
+
+#pragma mark - STLineGraphViewControllerDelegate Methods
+- (void)doneButtonWasTapped:(id)sender
+{
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)dealloc

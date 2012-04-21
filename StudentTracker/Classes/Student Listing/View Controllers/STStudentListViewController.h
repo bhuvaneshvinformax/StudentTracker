@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "STAddStudentViewController.h"
+#import "STLineGraphViewController.h"
 
-@interface STStudentListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddStudentViewControllerDelegate, UIActionSheetDelegate>
+@interface STStudentListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddStudentViewControllerDelegate, UIActionSheetDelegate, STLineGraphViewControllerDelegate>
 
 - (id)initWithContext:(NSManagedObjectContext *)context;
 
