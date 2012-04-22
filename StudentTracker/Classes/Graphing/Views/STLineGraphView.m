@@ -19,6 +19,7 @@
     {
         
         [self setChartHostingView:[[[CPTGraphHostingView alloc] initWithFrame:CGRectZero] autorelease]];
+        [chartHostingView setBackgroundColor:[UIColor purpleColor]];
         
         [self addSubview:chartHostingView];
         
@@ -30,8 +31,8 @@
 {
     [super layoutSubviews];
     
-    float chartHeight = self.frame.size.width - 20;
-    float chartWidth = self.frame.size.width - 20;    
+    float chartHeight = self.frame.size.height - 40;
+    float chartWidth = self.frame.size.width;    
     
     [[self chartHostingView] setFrame:CGRectMake(0, 0, chartWidth, chartHeight)];
     [[self chartHostingView] setCenter:[self center]];

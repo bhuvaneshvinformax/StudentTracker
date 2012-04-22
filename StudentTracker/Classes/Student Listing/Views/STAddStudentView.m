@@ -88,14 +88,13 @@
 
 - (void)dealloc
 {
-    
     [nameLabel release];
     [subjectLabel release];
     [dayEnrolledLabel release];
     
     [nameTextField release];
     [subjectTextField release];
-    [dayEnrolledLabel release];
+    [dayEnrolledTextField release];
     
     [super dealloc];
 }
