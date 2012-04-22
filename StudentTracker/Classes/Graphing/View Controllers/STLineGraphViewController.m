@@ -17,11 +17,12 @@
 
 @synthesize graph;
 @synthesize delegate;
+@synthesize managedObjectContext;
 
 - (void)loadView
 {
     [super loadView];
-    [self setTitle:@"Enrollement over Time"];
+    [self setTitle:@"Enrolement over Time"];
     [self setView:[[[STLineGraphView alloc] initWithFrame:self.view.frame] autorelease]];
     
     CPTTheme *defaultTheme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
@@ -43,6 +44,11 @@
     
     [[self graph] addPlot:studentScatterPlot];
     
+    CPTXYPlotSpace *studentPlotSpace = (CPTXYPlotSpace *)[graph defaultPlotSpace];
+    [studentPlotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(6)]];
+    [studentPlotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(10)]];    
+    
+    
     UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:self.title];
     [navigationItem setHidesBackButton:YES];
     
@@ -53,13 +59,12 @@
     
     [navigationItem setRightBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone 
                                                                     target:[self delegate] 
-                                                                           action:@selector(doneButtonWasTapped:)] autorelease] animated:NO];
+                                                                    action:@selector(doneButtonWasTapped:)] autorelease] animated:NO];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -70,18 +75,50 @@
 #pragma mark - CPTScatterPlotDataSource Methods
 - (NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
 {
-    return 0;
+    return 7;
 }
 
 - (NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
+    NSUInteger x = index;
+    NSUInteger y = 0;
+    
+    NSError *error;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"STStudent" inManagedObjectContext:managedObjectContext];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"dayEnrolled == %d", index];
+    
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:predicate];
+    
+    y = [managedObjectContext countForFetchRequest:fetchRequest error:&error];
+    
+    [fetchRequest release];
+    
+    
+    switch (fieldEnum) 
+    {
+        case CPTScatterPlotFieldX:
+            NSLog(@"x value for %d is %d", index, x);
+            return [NSNumber numberWithInt:x];
+            break;
+        case CPTScatterPlotFieldY:
+            NSLog(@"y value for %d is %d", index, y);            
+            return [NSNumber numberWithInt:y];
+            break;
+            
+        default:
+            break;
+    }
+    
     return nil;
 }
 
 - (void)dealloc
 {
-    
     [graph release];
+    [managedObjectContext release];
     
     [super dealloc];
 }

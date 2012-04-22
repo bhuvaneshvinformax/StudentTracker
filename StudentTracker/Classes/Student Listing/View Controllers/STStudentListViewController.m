@@ -130,11 +130,15 @@
 {
     if (buttonIndex == 0) 
     {
+        
         STLineGraphViewController *lineGraphVC = [[STLineGraphViewController alloc] init];
         [lineGraphVC setDelegate:self];
         [lineGraphVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [lineGraphVC setModalPresentationStyle:UIModalPresentationFullScreen];
+        [lineGraphVC setManagedObjectContext:[self managedObjectContext]];
         
         [self presentModalViewController:lineGraphVC animated:YES];
+        
         [lineGraphVC release];
     }
 }

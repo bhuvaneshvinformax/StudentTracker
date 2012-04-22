@@ -30,10 +30,11 @@
 {
     [super layoutSubviews];
     
-    float chartHeight = self.frame.size.width - 40;
-    float chartWidth = self.frame.size.width - 40;    
+    float chartHeight = self.frame.size.width - 20;
+    float chartWidth = self.frame.size.width - 20;    
     
     [[self chartHostingView] setFrame:CGRectMake(0, 0, chartWidth, chartHeight)];
+    [[self chartHostingView] setCenter:[self center]];
     
     
 }

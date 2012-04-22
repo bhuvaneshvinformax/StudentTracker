@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong) CPTGraph *graph;
 @property (nonatomic, assign) id<STLineGraphViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
 
