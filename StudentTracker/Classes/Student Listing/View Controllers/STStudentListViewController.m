@@ -130,16 +130,28 @@
 {
     if (buttonIndex == 0) 
     {
+        STLineGraphViewController *graphVC = [[STLineGraphViewController alloc] init];
+        [graphVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [graphVC setModalPresentationStyle:UIModalPresentationFullScreen];
+        [graphVC setDelegate:self];
+        [graphVC setManagedObjectContext:[self managedObjectContext]];
         
-        STLineGraphViewController *lineGraphVC = [[STLineGraphViewController alloc] init];
-        [lineGraphVC setDelegate:self];
-        [lineGraphVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-        [lineGraphVC setModalPresentationStyle:UIModalPresentationFullScreen];
-        [lineGraphVC setManagedObjectContext:[self managedObjectContext]];
+        [self presentModalViewController:graphVC animated:YES];
         
-        [self presentModalViewController:lineGraphVC animated:YES];
+        [graphVC release];
+
+    }
+    else if (buttonIndex == 1)
+    {
+        STBarGraphViewController *graphVC = [[STBarGraphViewController alloc] init];
+        [graphVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [graphVC setModalPresentationStyle:UIModalPresentationFullScreen];
+        [graphVC setDelegate:self];
+        [graphVC setManagedObjectContext:[self managedObjectContext]];
         
-        [lineGraphVC release];
+        [self presentModalViewController:graphVC animated:YES];
+        
+        [graphVC release];
     }
 }
 
@@ -174,7 +186,7 @@
                                                                            delegate:self 
                                                                   cancelButtonTitle:@"Cancel" 
                                                              destructiveButtonTitle:nil 
-                                                                  otherButtonTitles:@"Enrollement over time", nil] autorelease];
+                                                                  otherButtonTitles:@"Enrolment over time", @"Enrolment by subject", nil] autorelease];
     
     [graphSelectionActionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
 }
