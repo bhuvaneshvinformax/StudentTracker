@@ -51,10 +51,10 @@
     [studentPlotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt([self getTotalSubjects] + 1)]];
     [studentPlotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt([self getMaxEnrolled] + 1)]];
     
-    [[graph plotAreaFrame] setPaddingLeft:30.0f];
+    [[graph plotAreaFrame] setPaddingLeft:40.0f];
     [[graph plotAreaFrame] setPaddingTop:10.0f];
-    [[graph plotAreaFrame] setPaddingBottom:20.0f];
-    [[graph plotAreaFrame] setPaddingRight:10.0f];
+    [[graph plotAreaFrame] setPaddingBottom:120.0f];
+    [[graph plotAreaFrame] setPaddingRight:0.0f];
     [[graph plotAreaFrame] setBorderLineStyle:nil];
     
     CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
@@ -69,7 +69,10 @@
     [xAxis setLabelingPolicy:CPTAxisLabelingPolicyNone];
     [xAxis setLabelTextStyle:textStyle];
     [xAxis setLabelRotation:M_PI/4];
-    [xAxis setAxisLabels:[NSSet setWithArray:[self getSubjectTitlesAsArray]]];
+    
+    NSArray *subjectsArray = [self getSubjectTitlesAsArray];
+    
+    [xAxis setAxisLabels:[NSSet setWithArray:subjectsArray]];
     
     CPTXYAxis *yAxis = [axisSet yAxis];
     [yAxis setMajorIntervalLength:CPTDecimalFromInt(1)];
@@ -90,8 +93,6 @@
                                                                             style:UIBarButtonItemStyleDone 
                                                                            target:[self delegate] 
                                                                            action:@selector(doneButtonWasTapped:)] autorelease] animated:NO];
-    
-    
 }
 
 #pragma mark - Private Methods
@@ -179,7 +180,25 @@
     [request setReturnsDistinctResults:NO];
     [request setPropertiesToFetch :[NSArray arrayWithObject:@"subjectName"]];
     
-    return [managedObjectContext executeFetchRequest:request error:&error];
+    NSArray *titleStrings = [managedObjectContext executeFetchRequest:request error:&error];
+    NSMutableArray *labelArray = [NSMutableArray array];
+    
+    CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
+    [textStyle setFontSize:10];
+    
+    for (int i = 0; i < [titleStrings count]; i++)
+    {
+        NSDictionary *dict = [titleStrings objectAtIndex:i];
+        
+        CPTAxisLabel *axisLabel = [[CPTAxisLabel alloc] initWithText:[dict objectForKey:@"subjectName"] textStyle:textStyle];
+        [axisLabel setTickLocation:CPTDecimalFromInt(i + 1)];
+        [axisLabel setRotation:M_PI/4];
+        [axisLabel setOffset:0.1];
+        [labelArray addObject:axisLabel];
+        [axisLabel release];
+    }
+    
+    return [NSArray arrayWithArray:labelArray];
 }
 
 #pragma mark - CPTBarPlotDataSourceMethods
