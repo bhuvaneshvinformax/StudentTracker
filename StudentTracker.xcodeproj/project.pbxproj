@@ -28,11 +28,11 @@
 		9C3AF10A15358FDD00EF3A9B /* StudentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C3AF10915358FDD00EF3A9B /* StudentList.plist */; };
 		9C695CCE1532B18200809B8A /* STStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C695CCD1532B18200809B8A /* STStudent.m */; };
 		9C6FA741154806C800EE5100 /* STBarGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6FA740154806C800EE5100 /* STBarGraphViewController.m */; };
-		9C6FA744154806DF00EE5100 /* STBarGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6FA743154806DF00EE5100 /* STBarGraphView.m */; };
 		9CA1473B1532979A006C716F /* STAddSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1473A1532979A006C716F /* STAddSubjectViewController.m */; };
 		9CA1473E153297AF006C716F /* STAddSubjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1473D153297AF006C716F /* STAddSubjectView.m */; };
 		9CA46EF5153EE1460046479A /* STLineGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA46EF4153EE1460046479A /* STLineGraphViewController.m */; };
 		9CA8E771154269D700A0E6B8 /* STLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA8E770154269D700A0E6B8 /* STLineGraphView.m */; };
+		9CBCBF37154927B000A2935B /* STGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBCBF36154927B000A2935B /* STGraphView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +87,6 @@
 		9C695CCD1532B18200809B8A /* STStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STStudent.m; path = "Classes/Core Data Entities/STStudent.m"; sourceTree = "<group>"; };
 		9C6FA73F154806C800EE5100 /* STBarGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STBarGraphViewController.h; path = "Classes/Graphing/View Controllers/STBarGraphViewController.h"; sourceTree = "<group>"; };
 		9C6FA740154806C800EE5100 /* STBarGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STBarGraphViewController.m; path = "Classes/Graphing/View Controllers/STBarGraphViewController.m"; sourceTree = "<group>"; };
-		9C6FA742154806DF00EE5100 /* STBarGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STBarGraphView.h; path = Classes/Graphing/Views/STBarGraphView.h; sourceTree = "<group>"; };
-		9C6FA743154806DF00EE5100 /* STBarGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STBarGraphView.m; path = Classes/Graphing/Views/STBarGraphView.m; sourceTree = "<group>"; };
 		9CA147391532979A006C716F /* STAddSubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAddSubjectViewController.h; path = "Classes/Subject Listing/View Controllers/STAddSubjectViewController.h"; sourceTree = "<group>"; };
 		9CA1473A1532979A006C716F /* STAddSubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STAddSubjectViewController.m; path = "Classes/Subject Listing/View Controllers/STAddSubjectViewController.m"; sourceTree = "<group>"; };
 		9CA1473C153297AF006C716F /* STAddSubjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAddSubjectView.h; path = "Classes/Subject Listing/Views/STAddSubjectView.h"; sourceTree = "<group>"; };
@@ -97,6 +95,8 @@
 		9CA46EF4153EE1460046479A /* STLineGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STLineGraphViewController.m; path = "Classes/Graphing/View Controllers/STLineGraphViewController.m"; sourceTree = "<group>"; };
 		9CA8E76F154269D700A0E6B8 /* STLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STLineGraphView.h; path = Classes/Graphing/Views/STLineGraphView.h; sourceTree = "<group>"; };
 		9CA8E770154269D700A0E6B8 /* STLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STLineGraphView.m; path = Classes/Graphing/Views/STLineGraphView.m; sourceTree = "<group>"; };
+		9CBCBF35154927B000A2935B /* STGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STGraphView.h; path = Classes/Graphing/Views/STGraphView.h; sourceTree = "<group>"; };
+		9CBCBF36154927B000A2935B /* STGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STGraphView.m; path = Classes/Graphing/Views/STGraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,8 +285,8 @@
 			children = (
 				9CA8E76F154269D700A0E6B8 /* STLineGraphView.h */,
 				9CA8E770154269D700A0E6B8 /* STLineGraphView.m */,
-				9C6FA742154806DF00EE5100 /* STBarGraphView.h */,
-				9C6FA743154806DF00EE5100 /* STBarGraphView.m */,
+				9CBCBF35154927B000A2935B /* STGraphView.h */,
+				9CBCBF36154927B000A2935B /* STGraphView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -399,7 +399,7 @@
 				9CA46EF5153EE1460046479A /* STLineGraphViewController.m in Sources */,
 				9CA8E771154269D700A0E6B8 /* STLineGraphView.m in Sources */,
 				9C6FA741154806C800EE5100 /* STBarGraphViewController.m in Sources */,
-				9C6FA744154806DF00EE5100 /* STBarGraphView.m in Sources */,
+				9CBCBF37154927B000A2935B /* STGraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

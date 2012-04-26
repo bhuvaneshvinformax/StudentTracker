@@ -1,14 +1,14 @@
 //
-//  STLineGraphView.m
+//  STGraphView.m
 //  StudentTracker
 //
-//  Created by Aron Bury on 21/04/12.
+//  Created by Aron Bury on 26/04/12.
 //  Copyright (c) 2012 Aron's IT Consultancy. All rights reserved.
 //
 
-#import "STLineGraphView.h"
+#import "STGraphView.h"
 
-@implementation STLineGraphView
+@implementation STGraphView
 
 @synthesize chartHostingView;
 
@@ -17,12 +17,10 @@
     self = [super initWithFrame:frame];
     if (self) 
     {
-        
         [self setChartHostingView:[[[CPTGraphHostingView alloc] initWithFrame:CGRectZero] autorelease]];
         [chartHostingView setBackgroundColor:[UIColor clearColor]];
         
         [self addSubview:chartHostingView];
-        
     }
     return self;
 }
@@ -41,10 +39,7 @@
 - (void)dealloc
 {
     [chartHostingView release];
-    
     [super dealloc];
 }
-
-
 
 @end
