@@ -153,6 +153,18 @@
         
         [graphVC release];
     }
+    else if (buttonIndex == 2) 
+    {
+        STPieGraphViewController *graphVC = [[STPieGraphViewController alloc] init];
+        [graphVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [graphVC setModalPresentationStyle:UIModalPresentationFullScreen];
+        [graphVC setDelegate:self];
+        [graphVC setManagedObjectContext:[self managedObjectContext]];
+        
+        [self presentModalViewController:graphVC animated:YES];
+        
+        [graphVC release];
+    }
 }
 
 #pragma mark - Table view delegate
@@ -186,7 +198,7 @@
                                                                            delegate:self 
                                                                   cancelButtonTitle:@"Cancel" 
                                                              destructiveButtonTitle:nil 
-                                                                  otherButtonTitles:@"Enrolment over time", @"Enrolment by subject", nil] autorelease];
+                                                                  otherButtonTitles:@"Enrolment over time", @"Subject totals - Bar", @"Subject totals - pie", nil] autorelease];
     
     [graphSelectionActionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
 }

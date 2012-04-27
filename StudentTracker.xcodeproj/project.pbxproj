@@ -26,6 +26,7 @@
 		9C2439811532790600F5B20D /* STAddStudentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C24397F1532790600F5B20D /* STAddStudentView.m */; };
 		9C3AF10815358FC100EF3A9B /* SubjectList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C3AF10715358FC100EF3A9B /* SubjectList.plist */; };
 		9C3AF10A15358FDD00EF3A9B /* StudentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C3AF10915358FDD00EF3A9B /* StudentList.plist */; };
+		9C3F2053154B5F3200E6D502 /* STPieGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F2052154B5F3200E6D502 /* STPieGraphViewController.m */; };
 		9C695CCE1532B18200809B8A /* STStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C695CCD1532B18200809B8A /* STStudent.m */; };
 		9C6FA741154806C800EE5100 /* STBarGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6FA740154806C800EE5100 /* STBarGraphViewController.m */; };
 		9CA1473B1532979A006C716F /* STAddSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1473A1532979A006C716F /* STAddSubjectViewController.m */; };
@@ -83,6 +84,8 @@
 		9C2439801532790600F5B20D /* STAddStudentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAddStudentView.h; path = "Classes/Student Listing/Views/STAddStudentView.h"; sourceTree = "<group>"; };
 		9C3AF10715358FC100EF3A9B /* SubjectList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SubjectList.plist; sourceTree = "<group>"; };
 		9C3AF10915358FDD00EF3A9B /* StudentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StudentList.plist; sourceTree = "<group>"; };
+		9C3F2051154B5F3200E6D502 /* STPieGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPieGraphViewController.h; path = "Classes/Graphing/View Controllers/STPieGraphViewController.h"; sourceTree = "<group>"; };
+		9C3F2052154B5F3200E6D502 /* STPieGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPieGraphViewController.m; path = "Classes/Graphing/View Controllers/STPieGraphViewController.m"; sourceTree = "<group>"; };
 		9C695CCC1532B18200809B8A /* STStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STStudent.h; path = "Classes/Core Data Entities/STStudent.h"; sourceTree = "<group>"; };
 		9C695CCD1532B18200809B8A /* STStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STStudent.m; path = "Classes/Core Data Entities/STStudent.m"; sourceTree = "<group>"; };
 		9C6FA73F154806C800EE5100 /* STBarGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STBarGraphViewController.h; path = "Classes/Graphing/View Controllers/STBarGraphViewController.h"; sourceTree = "<group>"; };
@@ -298,6 +301,8 @@
 				9CA46EF4153EE1460046479A /* STLineGraphViewController.m */,
 				9C6FA73F154806C800EE5100 /* STBarGraphViewController.h */,
 				9C6FA740154806C800EE5100 /* STBarGraphViewController.m */,
+				9C3F2051154B5F3200E6D502 /* STPieGraphViewController.h */,
+				9C3F2052154B5F3200E6D502 /* STPieGraphViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 				9CA8E771154269D700A0E6B8 /* STLineGraphView.m in Sources */,
 				9C6FA741154806C800EE5100 /* STBarGraphViewController.m in Sources */,
 				9CBCBF37154927B000A2935B /* STGraphView.m in Sources */,
+				9C3F2053154B5F3200E6D502 /* STPieGraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
