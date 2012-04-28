@@ -8,11 +8,12 @@
 
 #import "STBarGraphViewController.h"
 #import "STGraphView.h"
+#import "STBarGraphSubjectEnrollementDataSource.h"
 
 @interface STBarGraphViewController ()
-- (float)getTotalSubjects;
-- (float)getMaxEnrolled;
-- (NSArray *)getSubjectTitlesAsArray;
+
+@property (nonatomic, retain) STBarGraphSubjectEnrollementDataSource *barGraphDataSource;
+
 @end
 
 @implementation STBarGraphViewController
@@ -20,6 +21,7 @@
 @synthesize delegate;
 @synthesize managedObjectContext;
 @synthesize graph;
+@synthesize barGraphDataSource;
 
 - (void)loadView
 {
@@ -30,6 +32,8 @@
     CPTTheme *defaultTheme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
     
     [self setGraph:(CPTGraph *)[defaultTheme newGraph]];
+    
+    [self setBarGraphDataSource:[[[STBarGraphSubjectEnrollementDataSource alloc] initWithManagedObjectContext:[self managedObjectContext]] autorelease]];
 }
 
 - (void)viewDidLoad
@@ -43,13 +47,13 @@
     CPTBarPlot *subjectBarPlot = [[CPTBarPlot alloc] initWithFrame:[graph bounds]];
     [subjectBarPlot setIdentifier:@"subjectEnrollement"];
     [subjectBarPlot setDelegate:self];
-    [subjectBarPlot setDataSource:self];   
+    [subjectBarPlot setDataSource:[self barGraphDataSource]];
     
     [[self graph] addPlot:subjectBarPlot];
     
     CPTXYPlotSpace *studentPlotSpace = (CPTXYPlotSpace *)[graph defaultPlotSpace];
-    [studentPlotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt([self getTotalSubjects] + 1)]];
-    [studentPlotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt([self getMaxEnrolled] + 1)]];
+    [studentPlotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt([[self barGraphDataSource] getTotalSubjects] + 1)]];
+    [studentPlotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt([[self barGraphDataSource] getMaxEnrolled] + 1)]];
     
     [[graph plotAreaFrame] setPaddingLeft:40.0f];
     [[graph plotAreaFrame] setPaddingTop:10.0f];
@@ -70,7 +74,7 @@
     [xAxis setLabelTextStyle:textStyle];
     [xAxis setLabelRotation:M_PI/4];
     
-    NSArray *subjectsArray = [self getSubjectTitlesAsArray];
+    NSArray *subjectsArray = [[self barGraphDataSource] getSubjectTitlesAsArray];
     
     [xAxis setAxisLabels:[NSSet setWithArray:subjectsArray]];
     
@@ -95,157 +99,11 @@
                                                                            action:@selector(doneButtonWasTapped:)] autorelease] animated:NO];
 }
 
-#pragma mark - Private Methods
-- (float)getTotalSubjects
-{
-    NSError *error = nil;
-    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"STSubject" inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    return [managedObjectContext countForFetchRequest:fetchRequest error:&error];
-}
-
-- (float)getMaxEnrolled
-{
-    float maxEnrolled = 0;
-    
-    NSError *error = nil;
-    
-    for (int i = 0; i < [self getTotalSubjects]; i++) 
-    {   
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"STStudent" inManagedObjectContext:managedObjectContext];
-        
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"subjectID == %d", i];
-        [fetchRequest setEntity:entity];
-        [fetchRequest setPredicate:predicate];
-        
-        float subjectMax = [managedObjectContext countForFetchRequest:fetchRequest error:&error];
-        [fetchRequest release];
-        
-        if (subjectMax > maxEnrolled) 
-        {
-            maxEnrolled = subjectMax;
-        }
-    }
-    
-    return maxEnrolled;
-}
-
--(CPTFill *)barFillForBarPlot:(CPTBarPlot *)barPlot recordIndex:(NSUInteger)index
-{
- 	CPTColor *areaColor = nil;
-    
-    switch (index) 
-    {
-        case 0:
-            areaColor = [CPTColor redColor];
-            break;
-            
-        case 1:
-            areaColor = [CPTColor blueColor];
-            break;
-        
-        case 2:
-            areaColor = [CPTColor orangeColor];
-            break;
-            
-        case 3:
-            areaColor = [CPTColor greenColor];
-            break;
-            
-        default:
-            areaColor = [CPTColor purpleColor];
-            break;
-    }
-    
-    
-	CPTFill *barFill = [CPTFill fillWithColor:areaColor];
-    
-    return barFill;
-
-}
-
-- (NSArray *)getSubjectTitlesAsArray
-{
-    NSError *error = nil;
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"subjectID" ascending:YES];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"STSubject" inManagedObjectContext:managedObjectContext];    
-    [request setEntity:entity];
-    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    [request setResultType:NSDictionaryResultType];
-    [request setReturnsDistinctResults:NO];
-    [request setPropertiesToFetch :[NSArray arrayWithObject:@"subjectName"]];
-    
-    NSArray *titleStrings = [managedObjectContext executeFetchRequest:request error:&error];
-    NSMutableArray *labelArray = [NSMutableArray array];
-    
-    CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
-    [textStyle setFontSize:10];
-    
-    for (int i = 0; i < [titleStrings count]; i++)
-    {
-        NSDictionary *dict = [titleStrings objectAtIndex:i];
-        
-        CPTAxisLabel *axisLabel = [[CPTAxisLabel alloc] initWithText:[dict objectForKey:@"subjectName"] textStyle:textStyle];
-        [axisLabel setTickLocation:CPTDecimalFromInt(i + 1)];
-        [axisLabel setRotation:M_PI/4];
-        [axisLabel setOffset:0.1];
-        [labelArray addObject:axisLabel];
-        [axisLabel release];
-    }
-    
-    return [NSArray arrayWithArray:labelArray];
-}
-
-#pragma mark - CPTBarPlotDataSourceMethods
-- (NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
-{
-    return [self getTotalSubjects];
-}
-
-- (NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
-{
-    int x = index + 1;
-    int y = 0;
-    
-    NSError *error;
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"STStudent" inManagedObjectContext:managedObjectContext];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"subjectID == %d", index];
-    
-    [fetchRequest setEntity:entity];
-    [fetchRequest setPredicate:predicate];
-    
-    y = [managedObjectContext countForFetchRequest:fetchRequest error:&error];
-    
-    [fetchRequest release];
-    
-    switch (fieldEnum) 
-    {
-        case CPTScatterPlotFieldX:
-            return [NSNumber numberWithInt:x];
-            break;
-        case CPTScatterPlotFieldY:
-            return [NSNumber numberWithInt:y];
-            break;
-            
-        default:
-            break;
-    }
-    
-    return nil;
-}
-
 - (void)dealloc
 {
     [managedObjectContext release];
     [graph release];
+    [barGraphDataSource release];
     
     [super dealloc];
 }

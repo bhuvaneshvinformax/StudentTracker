@@ -11,12 +11,13 @@
 
 @interface STAbstractSubjectEnrollementDataSource : NSObject <CPTPlotDataSource>
 
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)aManagedObjectContext;
-
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
-+ (float)getTotalSubjects;
-+ (float)getMaxEnrolled;
-+ (NSArray *)getSubjectTitlesAsArray;
+
+- (id)initWithManagedObjectContext:(NSManagedObjectContext *)aManagedObjectContext;
+
+- (float)getTotalSubjects;
+- (float)getMaxEnrolled;
+- (NSArray *)getSubjectTitlesAsArray;
 
 @end

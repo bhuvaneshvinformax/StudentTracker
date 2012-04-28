@@ -15,7 +15,7 @@
 
 @end
 
-@interface STBarGraphViewController : UIViewController <CPTBarPlotDelegate, CPTBarPlotDataSource>
+@interface STBarGraphViewController : UIViewController <CPTBarPlotDelegate>
 
 @property (nonatomic, strong) CPTGraph *graph;
 @property (nonatomic, assign) id<STBarGraphViewControllerDelegate> delegate;

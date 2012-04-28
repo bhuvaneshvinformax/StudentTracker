@@ -29,6 +29,7 @@
     CPTTheme *defaultTheme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
     
     [self setGraph:(CPTGraph *)[defaultTheme newGraph]];
+    [graph setFrame:self.view.bounds];
 }
 
 - (void)viewDidLoad
@@ -40,13 +41,12 @@
     [[graphView chartHostingView] setHostedGraph:[self graph]];
     
     CPTPieChart *pieChart = [[CPTPieChart alloc] initWithFrame:[graph bounds]];
+    [pieChart setPieRadius:100.00];
+    [pieChart setIdentifier:@"Subject"];
+    [pieChart setStartAngle:M_PI_4];
+    [pieChart setSliceDirection:CPTPieDirectionCounterClockwise];
     [pieChart setDataSource:[[STAbstractSubjectEnrollementDataSource alloc] initWithManagedObjectContext:[self managedObjectContext]]];
     [graph addPlot:pieChart];
-    
-    
-    
-    
-    
     
     //Allow user to go back
     UINavigationItem *navigationItem = [[[UINavigationItem alloc] initWithTitle:self.title] autorelease];
@@ -61,17 +61,6 @@
                                                                             style:UIBarButtonItemStyleDone 
                                                                            target:[self delegate] 
                                                                            action:@selector(doneButtonWasTapped:)] autorelease] animated:NO];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)dealloc
