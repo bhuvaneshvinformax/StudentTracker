@@ -15,7 +15,7 @@
 
 @end
 
-@interface STPieGraphViewController : UIViewController <CPTPieChartDelegate>
+@interface STPieGraphViewController : UIViewController
 
 @property (nonatomic, strong) CPTGraph *graph;
 @property (nonatomic, assign) id<STPieGraphViewControllerDelegate> delegate;

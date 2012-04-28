@@ -8,12 +8,17 @@
 
 #import "STPieGraphViewController.h"
 #import "STGraphView.h"
+#import "STAbstractSubjectEnrollementDataSource.h"
 
 @interface STPieGraphViewController ()
 
 @end
 
 @implementation STPieGraphViewController
+
+@synthesize managedObjectContext;
+@synthesize delegate;
+@synthesize graph;
 
 - (void)loadView
 {
@@ -33,6 +38,15 @@
     STGraphView *graphView = (STGraphView *)[self view];
     
     [[graphView chartHostingView] setHostedGraph:[self graph]];
+    
+    CPTPieChart *pieChart = [[CPTPieChart alloc] initWithFrame:[graph bounds]];
+    [pieChart setDataSource:[[STAbstractSubjectEnrollementDataSource alloc] initWithManagedObjectContext:[self managedObjectContext]]];
+    [graph addPlot:pieChart];
+    
+    
+    
+    
+    
     
     //Allow user to go back
     UINavigationItem *navigationItem = [[[UINavigationItem alloc] initWithTitle:self.title] autorelease];
@@ -58,6 +72,14 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)dealloc
+{
+    [graph release];
+    [managedObjectContext release];
+    
+    [super dealloc];
 }
 
 @end
