@@ -12,6 +12,8 @@
 
 @interface STPieGraphViewController ()
 
+@property (nonatomic, strong) STAbstractSubjectEnrollementDataSource *pieChartDataSource;
+
 @end
 
 @implementation STPieGraphViewController
@@ -19,6 +21,7 @@
 @synthesize managedObjectContext;
 @synthesize delegate;
 @synthesize graph;
+@synthesize pieChartDataSource;
 
 - (void)loadView
 {
@@ -30,6 +33,8 @@
     
     [self setGraph:(CPTGraph *)[defaultTheme newGraph]];
     [graph setFrame:self.view.bounds];
+    
+    [self setPieChartDataSource:[[[STAbstractSubjectEnrollementDataSource alloc] initWithManagedObjectContext:[self managedObjectContext]] autorelease]];
 }
 
 - (void)viewDidLoad
@@ -45,8 +50,18 @@
     [pieChart setIdentifier:@"Subject"];
     [pieChart setStartAngle:M_PI_4];
     [pieChart setSliceDirection:CPTPieDirectionCounterClockwise];
-    [pieChart setDataSource:[[STAbstractSubjectEnrollementDataSource alloc] initWithManagedObjectContext:[self managedObjectContext]]];
+    [pieChart setDataSource:pieChartDataSource];
+    [pieChart setDelegate:self];
     [graph addPlot:pieChart];
+    
+    [graph setAxisSet:nil];
+    [[graph plotAreaFrame] setBorderLineStyle:nil];
+    
+    CPTLegend *theLegend = [CPTLegend legendWithGraph:[self graph]];
+    [theLegend setNumberOfColumns:2];
+    [theLegend setCornerRadius:5.0];
+    [[self graph] setLegend:theLegend];
+    [[self graph] setLegendAnchor:CPTRectAnchorTopRight];
     
     //Allow user to go back
     UINavigationItem *navigationItem = [[[UINavigationItem alloc] initWithTitle:self.title] autorelease];
@@ -67,6 +82,7 @@
 {
     [graph release];
     [managedObjectContext release];
+    [pieChartDataSource release];
     
     [super dealloc];
 }

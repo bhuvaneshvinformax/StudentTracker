@@ -137,6 +137,13 @@
     return nil;
 }
 
+-(NSString *)legendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)index
+{
+    
+    
+    
+}
+
 
 
 #pragma mark - NSObject Methods
