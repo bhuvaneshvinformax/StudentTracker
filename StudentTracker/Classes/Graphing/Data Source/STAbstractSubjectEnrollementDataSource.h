@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CorePlot-CocoaTouch.h"
 
-@interface STAbstractSubjectEnrollementDataSource : NSObject <CPTPlotDataSource, CPTPieChartDataSource>
+@interface STAbstractSubjectEnrollementDataSource : NSObject <CPTPlotDataSource>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 

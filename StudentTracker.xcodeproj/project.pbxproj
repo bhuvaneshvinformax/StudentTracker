@@ -28,6 +28,7 @@
 		9C3AF10815358FC100EF3A9B /* SubjectList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C3AF10715358FC100EF3A9B /* SubjectList.plist */; };
 		9C3AF10A15358FDD00EF3A9B /* StudentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C3AF10915358FDD00EF3A9B /* StudentList.plist */; };
 		9C3F2053154B5F3200E6D502 /* STPieGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F2052154B5F3200E6D502 /* STPieGraphViewController.m */; };
+		9C54966E154CC461009E456E /* STPieGraphSubjectEnrollementDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C54966D154CC461009E456E /* STPieGraphSubjectEnrollementDataSource.m */; };
 		9C695CCE1532B18200809B8A /* STStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C695CCD1532B18200809B8A /* STStudent.m */; };
 		9C6CC9F3154B7280007D345A /* STAbstractSubjectEnrollementDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6CC9F2154B7280007D345A /* STAbstractSubjectEnrollementDataSource.m */; };
 		9C6FA741154806C800EE5100 /* STBarGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6FA740154806C800EE5100 /* STBarGraphViewController.m */; };
@@ -90,6 +91,8 @@
 		9C3AF10915358FDD00EF3A9B /* StudentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StudentList.plist; sourceTree = "<group>"; };
 		9C3F2051154B5F3200E6D502 /* STPieGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPieGraphViewController.h; path = "Classes/Graphing/View Controllers/STPieGraphViewController.h"; sourceTree = "<group>"; };
 		9C3F2052154B5F3200E6D502 /* STPieGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPieGraphViewController.m; path = "Classes/Graphing/View Controllers/STPieGraphViewController.m"; sourceTree = "<group>"; };
+		9C54966C154CC461009E456E /* STPieGraphSubjectEnrollementDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPieGraphSubjectEnrollementDataSource.h; path = "Classes/Graphing/Data Source/STPieGraphSubjectEnrollementDataSource.h"; sourceTree = "<group>"; };
+		9C54966D154CC461009E456E /* STPieGraphSubjectEnrollementDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPieGraphSubjectEnrollementDataSource.m; path = "Classes/Graphing/Data Source/STPieGraphSubjectEnrollementDataSource.m"; sourceTree = "<group>"; };
 		9C695CCC1532B18200809B8A /* STStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STStudent.h; path = "Classes/Core Data Entities/STStudent.h"; sourceTree = "<group>"; };
 		9C695CCD1532B18200809B8A /* STStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STStudent.m; path = "Classes/Core Data Entities/STStudent.m"; sourceTree = "<group>"; };
 		9C6CC9F1154B7280007D345A /* STAbstractSubjectEnrollementDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAbstractSubjectEnrollementDataSource.h; path = "Classes/Graphing/Data Source/STAbstractSubjectEnrollementDataSource.h"; sourceTree = "<group>"; };
@@ -287,6 +290,8 @@
 				9C6CC9F2154B7280007D345A /* STAbstractSubjectEnrollementDataSource.m */,
 				9C375929154BA36400934D8A /* STBarGraphSubjectEnrollementDataSource.h */,
 				9C37592A154BA36400934D8A /* STBarGraphSubjectEnrollementDataSource.m */,
+				9C54966C154CC461009E456E /* STPieGraphSubjectEnrollementDataSource.h */,
+				9C54966D154CC461009E456E /* STPieGraphSubjectEnrollementDataSource.m */,
 			);
 			name = "Data Source";
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				9C3F2053154B5F3200E6D502 /* STPieGraphViewController.m in Sources */,
 				9C6CC9F3154B7280007D345A /* STAbstractSubjectEnrollementDataSource.m in Sources */,
 				9C37592B154BA36400934D8A /* STBarGraphSubjectEnrollementDataSource.m in Sources */,
+				9C54966E154CC461009E456E /* STPieGraphSubjectEnrollementDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

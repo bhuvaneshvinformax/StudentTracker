@@ -8,11 +8,11 @@
 
 #import "STPieGraphViewController.h"
 #import "STGraphView.h"
-#import "STAbstractSubjectEnrollementDataSource.h"
+#import "STPieGraphSubjectEnrollementDataSource.h"
 
 @interface STPieGraphViewController ()
 
-@property (nonatomic, strong) STAbstractSubjectEnrollementDataSource *pieChartDataSource;
+@property (nonatomic, strong) STPieGraphSubjectEnrollementDataSource *pieChartDataSource;
 
 @end
 
@@ -34,7 +34,7 @@
     [self setGraph:(CPTGraph *)[defaultTheme newGraph]];
     [graph setFrame:self.view.bounds];
     
-    [self setPieChartDataSource:[[[STAbstractSubjectEnrollementDataSource alloc] initWithManagedObjectContext:[self managedObjectContext]] autorelease]];
+    [self setPieChartDataSource:[[[STPieGraphSubjectEnrollementDataSource alloc] initWithManagedObjectContext:[self managedObjectContext]] autorelease]];
 }
 
 - (void)viewDidLoad
@@ -59,9 +59,9 @@
     
     CPTLegend *theLegend = [CPTLegend legendWithGraph:[self graph]];
     [theLegend setNumberOfColumns:2];
-    [theLegend setCornerRadius:5.0];
     [[self graph] setLegend:theLegend];
-    [[self graph] setLegendAnchor:CPTRectAnchorTopRight];
+    [[self graph] setLegendAnchor:CPTRectAnchorBottom];
+    [[self graph] setLegendDisplacement:CGPointMake(0.0, 30.0)];
     
     //Allow user to go back
     UINavigationItem *navigationItem = [[[UINavigationItem alloc] initWithTitle:self.title] autorelease];
